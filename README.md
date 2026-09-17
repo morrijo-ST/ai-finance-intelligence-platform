@@ -2,11 +2,17 @@
 
 An AI-assisted finance intelligence platform that connects structured enterprise data with natural-language analysis, executive reporting, and governed decision support.
 
-> **Working public demo:** This repository now includes deterministic synthetic data generation, executable finance analytics logic, a Streamlit application, automated tests, and reproducible run instructions. See [`DEMO.md`](DEMO.md).
+> **Live demo:** https://ai-finance-intelligence-platform.onrender.com
+
+> **Working public demo:** This repository includes deterministic synthetic data generation, executable finance analytics logic, a Streamlit application, automated tests, and reproducible run instructions. See [`DEMO.md`](DEMO.md).
 
 > **Portfolio note:** This public repository is a sanitized reference implementation based on enterprise finance-system patterns. It contains no employer data, credentials, internal identifiers, customer information, or proprietary source code.
 
 ## Try It
+
+**Hosted:** https://ai-finance-intelligence-platform.onrender.com
+
+**Local:**
 
 ```bash
 python -m venv .venv
@@ -79,6 +85,7 @@ Analysis    Detection   Briefings
 ├── synthetic.py           # deterministic dummy-data generator
 ├── requirements.txt
 ├── DEMO.md
+├── render.yaml
 ├── docs/
 │   ├── case-study.md
 │   ├── architecture.md
@@ -100,7 +107,7 @@ Analysis    Detection   Briefings
 - [x] Executive briefing example
 - [x] Automated tests
 - [x] Security / controls documentation
-- [ ] Hosted live-demo URL
+- [x] Hosted live-demo URL
 - [ ] Recorded 60–120 second walkthrough
 
 ## Design Principle
