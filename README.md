@@ -2,7 +2,20 @@
 
 An AI-assisted finance intelligence platform that connects structured enterprise data with natural-language analysis, executive reporting, and governed decision support.
 
+> **Working public demo:** This repository now includes deterministic synthetic data generation, executable finance analytics logic, a Streamlit application, automated tests, and reproducible run instructions. See [`DEMO.md`](DEMO.md).
+
 > **Portfolio note:** This public repository is a sanitized reference implementation based on enterprise finance-system patterns. It contains no employer data, credentials, internal identifiers, customer information, or proprietary source code.
+
+## Try It
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+The demo includes finance Q&A, executive briefing generation, monthly revenue / forecast / bookings analysis, regional performance, and variance detail. The underlying synthetic portfolio is regenerated deterministically on every run.
 
 ## Business Problem
 
@@ -46,24 +59,26 @@ Analysis    Detection   Briefings
 ## Core Capabilities
 
 - Natural-language financial analysis
-- Governed SQL generation and retrieval
-- Metric-definition layer
+- Governed metric retrieval
 - Revenue / bookings / forecast analysis
-- Variance and anomaly detection
+- Variance and anomaly-oriented reporting
 - Executive commentary generation
-- Scheduled management briefings
-- API-based integration
+- API-oriented architecture
 - Audit-friendly controls and human review
 
 ## Technology
 
-`Python` `FastAPI` `Snowflake` `Claude` `OpenAI` `SQL` `REST APIs` `Azure` `Power BI`
+`Python` `Streamlit` `Pandas` `Plotly` `Snowflake` `FastAPI` `Claude` `OpenAI` `SQL` `REST APIs` `Azure` `Power BI`
 
 ## Repository Structure
 
 ```text
 .
-├── README.md
+├── app.py                 # interactive demo
+├── core.py                # finance logic / Q&A
+├── synthetic.py           # deterministic dummy-data generator
+├── requirements.txt
+├── DEMO.md
 ├── docs/
 │   ├── case-study.md
 │   ├── architecture.md
@@ -71,24 +86,22 @@ Analysis    Detection   Briefings
 │   ├── data-dictionary.md
 │   ├── security.md
 │   └── runbook.md
-├── sample-data/
-├── src/
-├── sql/
-├── diagrams/
-├── screenshots/
 └── tests/
+    └── test_core.py
 ```
 
-## Portfolio Roadmap
+## Demo Status
 
 - [x] Public-safe project definition
-- [ ] Synthetic finance dataset
-- [ ] Reference Snowflake schema
-- [ ] FastAPI demo service
-- [ ] AI prompt / tool orchestration examples
-- [ ] Architecture diagram
-- [ ] Executive briefing demo
-- [ ] 60–120 second walkthrough
+- [x] Deterministic synthetic finance data
+- [x] Executable finance analytics logic
+- [x] Interactive Streamlit demo
+- [x] Finance Q&A example
+- [x] Executive briefing example
+- [x] Automated tests
+- [x] Security / controls documentation
+- [ ] Hosted live-demo URL
+- [ ] Recorded 60–120 second walkthrough
 
 ## Design Principle
 
