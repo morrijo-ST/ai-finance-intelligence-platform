@@ -23,7 +23,13 @@ blue, teal, amber = "#579dff", "#35d5b1", "#f6b660"
 st.markdown(f"""<style>
 .stApp {{background:{bg};color:{ink};}}
 [data-testid="stHeader"] {{background:transparent;}}
-[data-testid="stSidebar"] {{background:{panel};border-right:1px solid {border};}}
+[data-testid="stSidebar"] {{background:{panel};border-right:1px solid {border};color:{ink};}}
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"], [data-testid="stWidgetLabel"], [data-testid="stRadio"] p {{color:{ink}!important;}}
+[data-testid="stCaptionContainer"], [data-testid="stMetricDelta"] {{color:{muted}!important;}}
+[data-baseweb="select"] > div, [data-baseweb="input"] {{background:{panel};color:{ink};border-color:{border};}}
+[data-baseweb="select"] span, [data-baseweb="select"] svg {{color:{ink};fill:{ink};}}
+[data-baseweb="tag"] {{background:#234571!important;color:#eef4ff!important;}}
+[data-testid="stLinkButton"] a, [data-testid="stBaseButton-secondary"] {{background:{panel};color:{ink};border-color:{border};}}
 .block-container {{padding-top:2rem;max-width:1540px;padding-bottom:3rem;}}
 h1,h2,h3 {{color:{ink};letter-spacing:-.035em;}}
 [data-testid="stMarkdownContainer"] p, label {{color:inherit;}}
@@ -63,7 +69,7 @@ def chart(fig, height=310):
     fig.update_layout(height=height, margin=dict(l=12,r=12,t=24,b=16), paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", font=dict(color=ink,family="Arial",size=12), legend=dict(orientation="h",y=1.14,x=0), hoverlabel=dict(bgcolor=panel,font_color=ink), separators=".,")
     fig.update_xaxes(showgrid=False,zeroline=False,color=muted)
     fig.update_yaxes(gridcolor=border,zeroline=False,color=muted)
-    st.plotly_chart(fig,use_container_width=True,config={"displayModeBar":False})
+    st.plotly_chart(fig,use_container_width=True,theme=None,config={"displayModeBar":False})
 
 def detail():
     st.subheader("The numbers behind the view")
