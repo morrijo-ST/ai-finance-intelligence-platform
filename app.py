@@ -66,9 +66,9 @@ monthly=f.groupby("month",as_index=False)[["actual_revenue","forecast_revenue","
 regional=f.groupby("region",as_index=False)[["actual_revenue","forecast_revenue","variance"]].sum().sort_values("actual_revenue")
 
 def chart(fig, height=310):
-    fig.update_layout(height=height, margin=dict(l=12,r=12,t=24,b=16), paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", font=dict(color=ink,family="Arial",size=12), legend=dict(orientation="h",y=1.14,x=0), hoverlabel=dict(bgcolor=panel,font_color=ink), separators=".,")
-    fig.update_xaxes(showgrid=False,zeroline=False,color=muted)
-    fig.update_yaxes(gridcolor=border,zeroline=False,color=muted)
+    fig.update_layout(height=height, margin=dict(l=48,r=20,t=40,b=56), paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", font=dict(color=ink,family="Arial",size=12), legend=dict(orientation="h",y=1.14,x=0), hoverlabel=dict(bgcolor=panel,font_color=ink), separators=".,")
+    fig.update_xaxes(showgrid=False,zeroline=False,color=muted,automargin=True)
+    fig.update_yaxes(gridcolor=border,zeroline=False,color=muted,automargin=True)
     st.plotly_chart(fig,use_container_width=True,theme=None,config={"displayModeBar":False})
 
 def detail():
